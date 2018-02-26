@@ -1,0 +1,51 @@
+<h2 id="irr">   Welcome {{name}}! </h2>
+Name: <input  [id]='myId' type="text" value="Noor">
+Name: <input [class.text-arial]="hasError" [disabled]="!isdisabled" type="text" value="Noor">
+
+<h2 [ngClass]="messageClasses">Angular Coding ... </h2>
+<h2 [class.text-arial]="hasError">Angular Coding ... </h2>
+
+<button (click)="onClick($event)"> Hello </button>
+{{hello}} <br> <br>
+
+<input #myInput type="text" placeholder="your name please...">
+<button (click)="logMessage(myInput.value)"> GO! </button> <br> <br>
+
+<input [(ngModel)]="names" type="text">
+{{names}} <br> <br>
+
+<!-- <h2 *ngIf="!displayName; else elseBlock"> {{name}} </h2>
+<ng-template #elseBlock>
+<h2> Hidden Name </h2>
+</ng-template> <br> <br> -->
+
+
+<div *ngIf="displayName;then thenBlock; else elseBlock"></div>
+
+<ng-template  #thenBlock>
+  {{name}}
+</ng-template>
+<ng-template  #elseBlock>
+  {{names}}
+</ng-template> <br> <br>
+
+<div [ngSwitch]="color">
+<div *ngSwitchCase="'red'">You picked <a [class.text-danger]="hasError">RED</a> color </div>
+<div *ngSwitchCase="'blue'">You picked <a [class.text-blue]="hasError">BLUE</a> color </div>
+<div *ngSwitchCase="'lime'">You picked <a [class.text-success]="hasError">LIME</a> color </div>
+<div *ngSwitchDefault>Pick again !!! </div> 
+
+<br><br>
+
+<div *ngFor="let col of colors; index as i; first as f">
+      <h3>{{i}} {{col}} {{f}}</h3>
+</div>
+<div>
+  <h2>{{0.50|currency:'GBP'}}</h2>
+  <h1>{{date}}</h1>
+  <h1>{{date | date:'short'}}</h1>
+  <h1>{{date | date:'shortDate'}}</h1>
+  <h1>{{date | date:'shortTime'}}</h1>
+
+
+</div>

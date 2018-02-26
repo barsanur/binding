@@ -1,0 +1,16 @@
+    .text-success{
+        color: lime;
+   }
+   .text-danger{
+        color: red;
+   }
+   .text-blue{
+     color:blue;
+   }
+   .text-special{
+        font-style: italic;
+   }
+   .text-arial{
+     font-style: arial;
+     color:green;
+}
